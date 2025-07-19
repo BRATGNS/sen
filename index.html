@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizim Hikayemiz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: pink url('https://i.pinimg.com/originals/e6/51/fd/e651fd20fd22151f0d9716e23f540848.gif') repeat;
+            background-size: cover;
+        }
+        .login-container, .content {
+            max-width: 500px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .login-container input[type="password"], .login-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+        .login-container button {
+            background-color: #ff66a3;
+            color: white;
+            cursor: pointer;
+        }
+        .hidden { display: none; }
+        h1, p { text-align: center; }
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+    <div class="login-container" id="loginBox">
+        <h2>💖 Giriş için Tanışma Tarihimizi Yaz 💖</h2>
+        <input type="password" id="passwordInput" placeholder="gg.aa.yyyy şeklinde yaz">
+        <button onclick="checkPassword()">Giriş Yap</button>
+        <p id="errorText" style="color:red; text-align:center;"></p>
+    </div>
+
+    <div class="content hidden" id="mainContent">
+        <h1>İlk Günümüz 💘</h1>
+        <p>Sana o gün ilk yazdığımdaki heyecanımı unutamıyorum senin bana yazmanı beklerken ki stresim o gün sabaha kadar konuşurken acaba beni sevicek mi hoşuna gidicek mi gitmiyicek mi diye kendimi yiyişim hepsi aklımda o gün hayatımda verdiğim en doğru karardı seni gerçekten çok seviyorum birbirimizi hiç bırakmayalım hep o ilk günkü gibi heyecanlı olalım olur mu</p>
+        <img src="images/ilkbuluşma1.jpg.jpeg" alt="İlk buluşma fotoğrafı 1">
+        <img src="images/ilkbuluşma2.jpg.jpeg" alt="İlk buluşma fotoğrafı 2">
+
+        <h2>Tatil Anılarımız 🏖️</h2>
+        <img src="images/tatil1.jpg.jpeg" alt="Tatil fotoğrafı 1">
+        <img src="images/tatil2.jpg.jpeg" alt="Tatil fotoğrafı 2">
+        <img src="images/tatil3.jpg.jpeg" alt="Tatil fotoğrafı 3">
+        <img src="images/tatil4.jpg.jpeg" alt="Tatil fotoğrafı 4">
+
+        <audio controls autoplay loop style="width:100%; margin-top:20px;">
+            <source src="music.mp3" type="audio/mpeg">
+            Tarayıcınız ses çaları desteklemiyor.
+        </audio>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "01.04.2025";
+            const input = document.getElementById('passwordInput').value;
+            if (input === correctPassword) {
+                document.getElementById('loginBox').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+            } else {
+                document.getElementById('errorText').innerText = "Tarih yanlış 😢";
+            }
+        }
+    </script>
+</body>
+</html>
